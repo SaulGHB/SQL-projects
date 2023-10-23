@@ -1,0 +1,2 @@
+select s.fname, s.lname, count(e.super_ssn) as headcount from employee e join employee s on e.super_ssn=s.ssn group by s.ssn having count(*)>=2;
+select fname, lname from employee where ssn not in (select Super_ssn from employee);
